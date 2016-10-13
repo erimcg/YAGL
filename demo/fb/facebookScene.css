@@ -1,0 +1,70 @@
+body {
+	position: relative;
+}
+
+#status {
+    z-index: 2;
+    visibility: visible;
+    position: absolute;
+    right: 0;
+    width: 300px;
+}
+
+fb\:login-button {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+}
+
+#notes {
+	z-index: 2;
+	visibility: visible;
+	font-size: 0.9em;
+	padding: 30px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: white;
+	moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+	position:absolute;
+	top: 200;
+	left: 0;
+}
+
+#renderCanvas {
+	z-index: 1;
+	min-height: 100%;
+	min-width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#buttonPanel {
+	z-index: 4;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+    moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.roundbutton {
+	width: 70px;
+	height: 70px;
+	background-color: #ffffff;
+	border: 5px solid #000000 ;
+	margin: 3px 7px;
+	color: black;
+	font-size: 0.6em;
+	moz-border-radius: 45px;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+}
+
+.roundbutton:hover {
+	opacity: 0.6;
+}

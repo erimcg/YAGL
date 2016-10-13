@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>YAGL Demo Scene</title>
+        <link rel="stylesheet" type="text/css" href="basicScene.css">
+    </head>
+
+    <body>
+        <div id = "notes"></div>
+
+        <canvas id = "renderCanvas"></canvas>
+
+        <div id = "buttonPanel">
+            <button id="buildGraph" onclick="buildGraph()" class="roundbutton">Build Graph</button> <br>
+            <button id="toggleBuildSpeed" onclick="toggleBuildSpeed()" class="roundbutton">Fast Build</button> <br>
+            <button id="graphProperties" onclick="graphProperties()" class="roundbutton">Graph Properties</button> <br>
+            <button id="toggleCamera" onclick="toggleCamera()" class="roundbutton">Freeze Camera</button><br>
+
+            <button id="findPath" onclick="findPath()" class="roundbutton">Shortest Path</button> <br>
+            <button id="colorComponents" onclick="colorComponents()" class="roundbutton">Color Components</button> <br>
+        </div>
+
+
+        <script src = http://cdn.babylonjs.com/2-4/babylon.js></script>
+
+        <script src = http://cdn.yagljs.com/0-1-0/yagl.js></script>
+        <script src = randomGraphGenerator.js></script>
+        <script src = basicScene.js></script>
+    </body>
+
+</html>
