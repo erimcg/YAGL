@@ -1,6 +1,6 @@
 
 Copyright &copy; 2016, Bridgewater College
-All rights reserved.
+<br />All rights reserved.
 
 Original authors: John Moran (jcmcivic@gmail.com), Eric McGregor (eric@n0code.net)
 
