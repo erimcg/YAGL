@@ -31,8 +31,5 @@ Graphs are predefined in JSON formatted files.  See template below.
 
 Please be patient with us.  We hope to have documentation out soon.
 
-## Copyright
-
-&copy; 2016 Bridgewater College, All rights reserved
 
 We've petitioned our college's administration to approve the release of this software as open source and are awaiting their response.
