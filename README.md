@@ -1,4 +1,4 @@
-# YAGL
+#YAGL
 
 YAGL (pronouned 'yæ gəl) is a javascript library that can create and render graphs in a 3D [BabylonJS](http://babylonjs.com) scene.  It was started as an undergraduate research project by John Moran (jcmcivic@gmail.com) and Eric McGregor (eric@n0code.net) at Bridgewater College.
 
