@@ -88,7 +88,7 @@ var YAGL;
                 return;
             }
 
-            var eid, vid1, vid2, e, path;
+            var eid, vid1, vid2, e;
             while(gb.eIndex < edges.length) {
                 eid = edges[gb.eIndex].id;
                 vid1 = edges[gb.eIndex].v1;

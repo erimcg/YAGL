@@ -5,6 +5,7 @@
  */
 
 var canvas = document.querySelector("#renderCanvas");
+
 var engine = new BABYLON.Engine(canvas, true);
 
 var createScene = function () {
@@ -62,7 +63,8 @@ var buildGraph = function () {
         var obj = createRandomYAGLGraphObject();
         builder.buildUsingJSONObj(obj);
     } else {
-        var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/dodecahedron.yagl");
+        //var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/dodecahedron.yagl");
+        var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/cube.yagl");
         builder.buildUsingJSONFile(url);
     }
 };
@@ -119,14 +121,20 @@ scene.onPointerDown = function (evt, pickResult) {
         var id = Number(pickResult.pickedMesh.name.slice(1));
 
         if (type == "v") {
-
+            var v = graph.vertices[id];
             if(graph.vertices[id].data != undefined){
-                html = "Vertex " + id + ": " + graph.vertices[id].data + "<br>";
+                html = "Vertex " + id + ": " + v.data + "<br>";
             } else {
                 html = "Vertex " + id + ": no data" + "<br>";
             }
+            html += "Degree: " + parseFloat(v.getDegree()).toFixed(2) + "<br>";
+            html += "Degree centrality: " + parseFloat(v.getDegreeCentrality()).toFixed(2) + "<br>";
+            html += "Closeness centrality: " + parseFloat(v.getClosenessCentrality()).toFixed(2) + "<br>";
         } else {
-            html = "Edge " + id + "<br>";
+            if(graph.edges[id] != undefined){
+              var e = graph.edges[id];
+              html = "Edge " + e.getEid() + "<br>";
+            }
         }
         editNotes(html, "darkgreen");
 
@@ -142,7 +150,7 @@ scene.onPointerDown = function (evt, pickResult) {
             selectedMeshes.push(pickResult.pickedMesh.name.substr(1));
             pickResult.pickedMesh.material.diffuseColor = BABYLON.Color3.Green();
 
-            path = graph.getPath(Number(selectedMeshes[1]), Number(selectedMeshes[0]));
+            path = graph.getShortestPath(Number(selectedMeshes[1]), Number(selectedMeshes[0]));
 
             if (path == null ) {
                 html = "No path exists" + "<br>";

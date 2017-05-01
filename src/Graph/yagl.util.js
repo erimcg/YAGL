@@ -1,5 +1,8 @@
-function isInt(n) {
-    return Number(n) === n && n % 1 === 0;
+
+
+function isInt(x) {
+    var y = parseInt(x, 10);
+    return !isNaN(y) && x == y && x.toString() == y.toString();
 }
 
 function downloadFile(url, type) {

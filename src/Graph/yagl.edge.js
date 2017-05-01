@@ -46,8 +46,6 @@ var YAGL;
             return this.mesh;
         };
 
-
-
         Edge.prototype.getAdjacentVertex = function (vid) {
             if (vid == this.v1.vid) {
                 return this.v2.vid;

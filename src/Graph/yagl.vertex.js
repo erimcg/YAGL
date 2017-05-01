@@ -19,6 +19,9 @@ var YAGL;
             this.mesh = null;
             this.parent = null;
 
+            this.degree = 0;
+            this.degreeCentrality = 0;
+            this.closenessCentrality = 0;
         }
 
         /***********
@@ -47,6 +50,18 @@ var YAGL;
 
         Vertex.prototype.getMesh = function () {
             return this.mesh;
+        };
+
+        Vertex.prototype.getDegree = function () {
+          return this.degree;
+        };
+
+        Vertex.prototype.getDegreeCentrality = function () {
+          return this.degreeCentrality;
+        };
+
+        Vertex.prototype.getClosenessCentrality = function () {
+          return this.closenessCentrality;
         };
 
         /***********
@@ -81,6 +96,26 @@ var YAGL;
         Vertex.prototype.setMesh = function (mesh) {
             this.mesh = mesh;
         };
+
+        Vertex.prototype.incrementDegree = function() {
+            this.degree = this.degree+1;
+        };
+
+        Vertex.prototype.decrementDegree = function() {
+            this.degree = this.degree-1;
+        };
+
+        Vertex.prototype.setDegreeCentrality = function(centrality) {
+            this.degreeCentrality = centrality;
+        };
+
+        Vertex.prototype.setClosenessCentrality = function(centrality) {
+            this.closenessCentrality = centrality;
+        };
+
+        /****************
+         * OTHER METHODS
+         ***************/
 
         Vertex.prototype.equals = function (v) {
             if (!(v instanceof Vertex))

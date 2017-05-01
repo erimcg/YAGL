@@ -1,31 +1,14 @@
 {
     "graphicsFramework":"Babylonjs",
+    "directed": true,
     "vertices":[
-        {"id":1, "position":[0,0,0],
-            "mesh":{
-                "meshName":"Suzanne",
-                "rootUrl":"http://demo.yagljs.com/assets/",
-                "sceneFilename":"suzanne.babylon"
-            }
-        },
+        {"id":1, "position":[0,0,0]},
         {"id":2, "position":[0,0,5]},
         {"id":3, "position":[5,0,5]},
-        {"id":4, "position":[5,0,0],
-            "mesh": {
-                "meshName":"Cube",
-                "rootUrl":"http://demo.yagljs.com/assets/",
-                "sceneFilename":"cube.babylon"
-            }
-        },
+        {"id":4, "position":[5,0,0]},
         {"id":5, "position":[0,5,0]},
         {"id":6, "position":[0,5,5]},
-        {"id":7, "position":[5,5,5],
-            "mesh": {
-                "meshName":"Cube",
-                "rootUrl":"http://demo.yagljs.com/assets/",
-                "sceneFilename":"cube.babylon"
-            }
-        },
+        {"id":7, "position":[5,5,5]},
         {"id":8, "position":[5,5,0]}
     ],
     "edges":[
