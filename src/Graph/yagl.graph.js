@@ -72,10 +72,10 @@ var YAGL;
     * Last, it adds the edge to the list of edges and returns the edge eid.
     */
 
-    Graph.prototype.addEdge = function (e, vid1, vid2) {
+    Graph.prototype.addEdge = function (e, vid1, vid2, weight) {
 
       if (isInt(e) && isInt(vid1) && isInt(vid2)) {
-        e = new YAGL.Edge(e, vid1, vid2);
+        e = new YAGL.Edge(e, vid1, vid2, weight);
       }
 
       if(e instanceof YAGL.Edge == false) {
@@ -143,6 +143,7 @@ var YAGL;
 
       // add edge to list of edges
       this.edges[e.eid] = e;
+      //console.log("edge added between " + u.vid + " and " + v.vid);
       this.graphicsManager.addEdgeMesh(e);
 
       // adjust closeness centrality for each vertex
@@ -210,10 +211,10 @@ var YAGL;
 
       // decrement the degree of each vertex
       var vid1 = edge.v1.vid;
-      vid1.decrementDegree();
+      this.vertices[vid1].decrementDegree();
 
       var vid2 = edge.v2.vid;
-      vid2.decrementDegree();
+      this.vertices[vid2].decrementDegree();
 
       // Remove edge from adjacency lists
       delete this.adjacencyList[vid1][eid];
@@ -532,7 +533,7 @@ var YAGL;
       }
 
       if (!this.adjacencyList.hasOwnProperty(startVid)) {
-        console.log("Search Failed: Invalid start vertex");
+        console.log("Search Failed: Invalid start vertex " + startVid);
         return null;
       }
 
@@ -666,7 +667,7 @@ var YAGL;
     */
 
     Graph.prototype.setClosenessCentralityForAllVertices = function () {
-      console.log("computing closeness centrality for vid: " + vid1);
+      //console.log("computing closeness centrality for vid: " + vid1);
       var numVertices = Object.keys(this.vertices).length;
 
       for (var vid1 in this.vertices) {
@@ -682,9 +683,9 @@ var YAGL;
             }
           }
         }
-        console.log("vid: "+ vid1);
-        console.log("set closeness: numVertices: " + numVertices);
-        console.log("set closeness: sumOfShortestPathLengths: " + sumOfShortestPathLengths);
+        //console.log("vid: "+ vid1);
+        //console.log("set closeness: numVertices: " + numVertices);
+        //console.log("set closeness: sumOfShortestPathLengths: " + sumOfShortestPathLengths);
         this.vertices[vid1].closenessCentrality = (1 / sumOfShortestPathLengths) * (numVertices - 1);
       }
     };
@@ -734,7 +735,7 @@ var YAGL;
 
       denominator = ((numVertices-2)*(numVertices-1)) / ((2*numVertices) - 3);
       closenessCentrality = numerator / denominator;
-      console.log('Closeness centrality: ' + closenessCentrality);
+      //console.log('Closeness centrality: ' + closenessCentrality);
 
       return closenessCentrality;
     };

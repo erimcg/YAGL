@@ -88,13 +88,14 @@ var YAGL;
                 return;
             }
 
-            var eid, vid1, vid2, e;
+            var eid, vid1, vid2, weight, e;
             while(gb.eIndex < edges.length) {
                 eid = edges[gb.eIndex].id;
                 vid1 = edges[gb.eIndex].v1;
                 vid2 = edges[gb.eIndex].v2;
+                weight = edges[gb.eIndex].weight;
 
-                e = gb.graph.addEdge(eid, vid1, vid2);
+                e = gb.graph.addEdge(eid, vid1, vid2, weight);
                 gb.eIndex++;
 
                 if(gb.slowBuild) {

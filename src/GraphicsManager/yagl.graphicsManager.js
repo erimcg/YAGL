@@ -20,7 +20,8 @@ var YAGL;
 
       var layoutType = getProperty(spec, "layout", null);
       if (layoutType == "Force Directed") {
-        this.layoutManager = new YAGL.ForceDirectedLayout(this.graph, 5, .9, 10, .9, .01);
+        console.log("layout is force directed");
+        this.layoutManager = new YAGL.ForceDirectedLayout(this.graph, 5, .20, 1, .9, .01);
       } else {
         this.layoutManager = null;
       }
@@ -96,7 +97,18 @@ var YAGL;
     };
 
     GraphicsManager.prototype.addEdgeMesh = function (e) {
-      var eid = e.eid;
+
+      // The layout manager will call setEdgeMesh() when the vertices'
+      // positions are set.
+      if (this.layoutManager != null) {
+        this.layoutManager.updateLayout();
+        return;
+      }
+
+      this.setEdgeMesh(e);
+    };
+
+    GraphicsManager.prototype.setEdgeMesh = function (e) {
 
       var path = [];
       path.push(e.v1.mesh.position);
@@ -106,29 +118,8 @@ var YAGL;
         this.createDirectedTube(e, path);
       }
       else {
-        e.mesh = this.createTube(e, path);
+        this.createTube(e, path);
       }
-      //this.updateLayout();
-    };
-
-    GraphicsManager.prototype.createTube = function (e, path) {
-
-      var eid = e.eid;
-
-      var radius = getProperty(this.spec, "edgeMesh:args:radius", .1);
-      var tess = getProperty(this.spec, "edgeMesh:args:tesselation", 32);
-
-      var mesh = BABYLON.Mesh.CreateTube("e" + eid, path, radius, tess, null, BABYLON.Mesh.NO_CAP, this.scene, true, BABYLON.Mesh.FRONTSIDE);
-
-      var visibility = getProperty(this.spec, "edgeMesh:visibility", true);
-      mesh.visibility = visibility;
-
-      mesh.material = new BABYLON.StandardMaterial("mat", this.scene);
-
-      var rgb = getProperty(this.spec, "edgeMesh:color", [1,1,1]);
-      mesh.material.diffuseColor = new BABYLON.Color3(rgb[0], rgb[1], rgb[2]);
-
-      return mesh;
     };
 
     // createDirectedTube takes in two vectors, the second of which is the
@@ -138,7 +129,6 @@ var YAGL;
     GraphicsManager.prototype.createDirectedTube = function (e, path) {
 
       var eid = e.eid;
-
       var vecFrom = path[0];
       var vecTo = path[1];
 
@@ -205,13 +195,42 @@ var YAGL;
       var path = [];
       path.push(tubeEnd);
       path.push(vecFrom);
-      this.createTube(eid, path);
+      this.createTube(e, path);
 
       // give the cone cool flames, sadly not yet functional (ONE DAY!!!)
       /*var flameMat = new BABYLON.StandardMaterial("material01",scene);
       flameMat.diffuseColor = new BABYLON.Color3(0,0,0);
       flameMat.diffuseTexture = new BABYLON.Texture("flames.jpg", scene);
       cone.material = flameMat;*/
+    };
+
+
+    GraphicsManager.prototype.createTube = function (e, path) {
+
+      var eid = e.eid;
+
+      var radius = getProperty(this.spec, "edgeMesh:args:radius", .1);
+      var tess = getProperty(this.spec, "edgeMesh:args:tesselation", 32);
+
+      if (this.graph.edges[e.eid].mesh != null) {
+        //this.graph.edges[eid].mesh = BABYLON.MeshBuilder.CreateTube(null, {path: path, radius: radius, instance: this.graph.edges[eid].mesh});
+        //return;
+        this.removeEdgeMesh(e.eid);
+      }
+
+      var mesh = BABYLON.Mesh.CreateTube("e" + eid, path, radius, tess, null, BABYLON.Mesh.NO_CAP, this.scene, true, BABYLON.Mesh.FRONTSIDE);
+
+      var visibility = getProperty(this.spec, "edgeMesh:visibility", true);
+      mesh.visibility = visibility;
+
+      mesh.material = new BABYLON.StandardMaterial("mat", this.scene);
+
+      var rgb = getProperty(this.spec, "edgeMesh:color", [1,1,1]);
+      mesh.material.diffuseColor = new BABYLON.Color3(rgb[0], rgb[1], rgb[2]);
+
+      e.mesh = mesh;
+
+      return mesh;
     };
 
     GraphicsManager.prototype.updateLayout = function () {
