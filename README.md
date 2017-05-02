@@ -20,7 +20,7 @@ The builder will build a graph using the specifications defined in the YAGL file
 
 Graphs are predefined in JSON formatted files.  See template below.
 
-- [YAGL 0.1.2](https://github.com/erimcg/YAGL/blob/master/doc/templates/0.1.2.yagl)
+- [YAGL 0.1.3](https://github.com/erimcg/YAGL/blob/master/doc/templates/0.1.3.yagl)
 
 ## Demonstrations
 
