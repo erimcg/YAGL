@@ -1,4 +1,4 @@
-#YAGL
+# YAGL
 
 YAGL (pronouned 'yæ gəl) is a javascript library that can create and render graphs in a 3D [BabylonJS](http://babylonjs.com) scene.  
 
