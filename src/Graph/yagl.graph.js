@@ -246,8 +246,8 @@ var YAGL;
       }
 
       // adjust degree centrality for each vertex
-      this.setDegreeCentralityForVertex(u.vid);
-      this.setDegreeCentralityForVertex(v.vid);
+      this.setDegreeCentralityForVertex(vid1);
+      this.setDegreeCentralityForVertex(vid2);
 
       // adjust closeness centrality for each vertex
       this.setClosenessCentralityForAllVertices();
