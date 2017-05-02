@@ -1,11 +1,6 @@
 {
     "description":"Dodecahedron",
     "graphicsFramework":"Babylonjs",
-    "vertexMesh":{
-        "meshName":"Cube",
-        "rootUrl":"http://demo.yagljs.com/assets/",
-        "sceneFilename":"cube.babylon"
-    },
     "vertices":[
         {"id":0, "position":[0,0,10.70466]},
         {"id":2, "position":[-3.568221,6.18034,7.978784]},
