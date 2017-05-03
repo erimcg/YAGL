@@ -1,0 +1,89 @@
+body {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+#notes {
+	z-index: 2;
+	visibility: visible;
+	font-size: 0.9em;
+	padding: 8px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: white;
+	moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	position:absolute;
+	top: 0;
+	left: 0;
+}
+
+#renderCanvas {
+    z-index: 1;
+    display: block;
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    left: 0;
+    top: -48px;
+}
+
+#buttonPanel {
+	z-index: 2;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 15px;
+	position: absolute;
+    visibility: hidden;
+	top: 0;
+	right: 0;
+    moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+#toolBar {
+    z-index: 2;
+	padding: 5px;
+    padding-bottom: 0px;
+	background-color: rgba(255, 255, 255, 0.2);
+	color: white;
+	moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	position:absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.toolBarLabel {
+    display: inline-block;
+    height: 30px;
+    margin: 3px;
+}
+
+.roundbutton {
+	width: 70px;
+	height: 70px;
+	background-color: #ffffff;
+	border: 5px solid #000000 ;
+	margin: 3px 7px;
+	color: black;
+	font-size: 0.6em;
+	moz-border-radius: 45px;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+}
+
+.roundbutton:hover {
+	opacity: 0.6;
+}
+
+.pieLabel {
+    color: #ffffff;
+}
+
+.degree_chart {
+    position: relative;
+    right: 16px;
+}
