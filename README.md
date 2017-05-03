@@ -24,7 +24,7 @@ Graphs are predefined in JSON formatted files.  See template below.
 
 ## Demonstrations
 
-- [Random and Predefined Graphs](http://demo.yagljs.com/basic/basicScene.html)
+- [Web App](http://demo.yagljs.com/webix/app.html)
 
 ## Documentation
 
