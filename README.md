@@ -24,7 +24,7 @@ Graphs are predefined in JSON formatted files.  See template below.
 
 ## Demonstrations
 
-- [Web App](http://demo.yagljs.com/webix/app.html)
+- [Web App](http://n0code.net/yagl/webix/app.html)
 
 ## Documentation
 
