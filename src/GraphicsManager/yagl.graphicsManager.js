@@ -21,7 +21,7 @@ var YAGL;
       var layoutType = getProperty(spec, "layout", null);
       if (layoutType == "Force Directed") {
         console.log("layout is force directed");
-        this.layoutManager = new YAGL.ForceDirectedLayout(this.graph, 5, .20, 1, .9, .01);
+        this.layoutManager = new YAGL.ForceDirectedLayout(this.graph, 5, .20, 10, .9, .01);
       } else {
         this.layoutManager = null;
       }

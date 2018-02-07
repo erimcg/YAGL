@@ -1,5 +1,6 @@
 {
     "graphicsFramework":"Babylonjs",
+    "directed": true,
     "vertices":[
         {"id":1, "position":[0,0,0]},
         {"id":2, "position":[0,0,5]},

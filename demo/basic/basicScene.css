@@ -21,7 +21,7 @@ body {
 
 #renderCanvas {
 	z-index: 1;
-  display: block;
+  	display: block;
 	width: 100vw;
 	height: 100vh;
 	position: absolute;

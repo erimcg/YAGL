@@ -69,6 +69,22 @@ var buildGraph = function () {
     }
 };
 
+/* Edit force-directed layout Properties */
+var editLayout = function() {
+  //var man = new YAGL.GraphicsManager();
+  var stiffness = prompt("Enter value for stiffness: ");
+  var repulsion = prompt("Enter value for repulsion: ");
+  var damping = prompt("Enter value for damping: ");
+  var minEnergyThreshold = prompt("Enter value for minimum energy threshold: ");
+  //var forceDirected = new YAGL.ForceDirectedLayout();
+
+  //TODO: check values that user types in before setting values
+  graph.graphicsManager.layoutManager.setStiffness(stiffness);
+  graph.graphicsManager.layoutManager.setRepulsion(repulsion);
+  graph.graphicsManager.layoutManager.setDamping(damping);
+  graph.graphicsManager.layoutManager.setMinEnergyThreshold(minEnergyThreshold);
+}
+
 /*** SLOW/FAST BUILD BUTTON ***/
 var toggleBuildSpeed = function () {
     builder.setSlowBuild(!builder.getSlowBuild());
@@ -86,7 +102,7 @@ var graphProperties = function () {
 };
 
 /*** ROTATE CAMERA ***/
-var rotateCamera = true;
+var rotateCamera = false;
 var step = Math.PI / 720;
 var radius = 35;
 var tick = 0;
@@ -119,25 +135,34 @@ scene.onPointerDown = function (evt, pickResult) {
 
         var type = pickResult.pickedMesh.name[0];
         var id = Number(pickResult.pickedMesh.name.slice(1));
+        console.log("clicked on " + pickResult.pickedMesh.name);
 
         if (type == "v") {
             var v = graph.vertices[id];
+            html = "Vertex id: " + id + "<br>";
             if(graph.vertices[id].data != undefined){
-                html = "Vertex " + id + ": " + v.data + "<br>";
+                html += "Data: " + v.data + "<br>";
             } else {
-                html = "Vertex " + id + ": no data" + "<br>";
+                html += "Data: no data" + "<br>";
             }
             html += "Degree: " + parseFloat(v.getDegree()).toFixed(2) + "<br>";
             html += "Degree centrality: " + parseFloat(v.getDegreeCentrality()).toFixed(2) + "<br>";
             html += "Closeness centrality: " + parseFloat(v.getClosenessCentrality()).toFixed(2) + "<br>";
-        } else {
+        } else if (type == "e") {
+            console.log("clicked on edge " + id);
             if(graph.edges[id] != undefined){
+
               var e = graph.edges[id];
-              html = "Edge " + e.getEid() + "<br>";
+              html = "Edge id: " + e.getEid() + "<br>";
+              html += "Weight: " + e.getWeight() + "<br>";
             }
+            else {
+              console.log("cant find edge");
+            }
+
         }
         editNotes(html, "darkgreen");
-
+        return;
     }
 
     if (currentAction == "findPath" && pickResult.hit && pickResult.pickedMesh.name.startsWith("v")) {
