@@ -10,7 +10,7 @@ var engine = new BABYLON.Engine(canvas, true);
 
 var createScene = function () {
     var scene = new BABYLON.Scene(engine);
-    scene.clearColor = BABYLON.Color3.Gray();
+    scene.clearColor = BABYLON.Color3.White();
 
     var camera = new BABYLON.ArcRotateCamera("camera1", Math.PI / 2, Math.PI / 2, 35, new BABYLON.Vector3(0, 0, 0), scene);
     camera.attachControl(canvas, false);
@@ -64,26 +64,10 @@ var buildGraph = function () {
         builder.buildUsingJSONObj(obj);
     } else {
         //var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/dodecahedron.yagl");
-        var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/cube.yagl");
+        var url = prompt("Please enter the URL.", "http://www.n0code.net/yagl/yagl_files/dodecahedron.yagl");
         builder.buildUsingJSONFile(url);
     }
 };
-
-/* Edit force-directed layout Properties */
-var editLayout = function() {
-  //var man = new YAGL.GraphicsManager();
-  var stiffness = prompt("Enter value for stiffness: ");
-  var repulsion = prompt("Enter value for repulsion: ");
-  var damping = prompt("Enter value for damping: ");
-  var minEnergyThreshold = prompt("Enter value for minimum energy threshold: ");
-  //var forceDirected = new YAGL.ForceDirectedLayout();
-
-  //TODO: check values that user types in before setting values
-  graph.graphicsManager.layoutManager.setStiffness(stiffness);
-  graph.graphicsManager.layoutManager.setRepulsion(repulsion);
-  graph.graphicsManager.layoutManager.setDamping(damping);
-  graph.graphicsManager.layoutManager.setMinEnergyThreshold(minEnergyThreshold);
-}
 
 /*** SLOW/FAST BUILD BUTTON ***/
 var toggleBuildSpeed = function () {

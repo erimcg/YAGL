@@ -2,7 +2,7 @@
     "graphicsFramework":"Babylonjs",
     "vertexMesh":{
        "meshName":"Suzanne",
-       "rootUrl":"http://demo.yagljs.com/assets/",
+       "rootUrl":"../assets/",
        "sceneFilename":"suzanne.babylon"
    },
     "vertices":[

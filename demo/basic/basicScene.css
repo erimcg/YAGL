@@ -2,28 +2,14 @@ body {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-}
-
-#notes {
-	z-index: 2;
-	visibility: visible;
-	font-size: 0.9em;
-	padding: 30px;
-	background-color: rgba(255, 255, 255, 0.2);
-	color: white;
-	moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	border-radius: 20px;
-	position:absolute;
-	top: 0;
-	left: 0;
+	overflow: hidden;
 }
 
 #renderCanvas {
 	z-index: 1;
   	display: block;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -31,27 +17,39 @@ body {
 
 #buttonPanel {
 	z-index: 2;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 15px;
 	position: absolute;
 	top: 0;
 	right: 0;
-    moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	border-radius: 20px;
+	width: max-content;
+	padding: 20px;
 }
 
 .roundbutton {
+	position: relative;
 	width: 70px;
 	height: 70px;
-	background-color: #ffffff;
-	border: 5px solid #000000 ;
-	margin: 3px 7px;
-	color: black;
-	font-size: 0.6em;
+
+	margin: 5px;
+	padding: 1px;
+
+	border: 5px solid darkgray ;
+
+	background-color: white;
+	color: darkslategray;
+
+	font-size: 0.8em;
+
 	moz-border-radius: 45px;
 	-webkit-border-radius: 45px;
 	border-radius: 45px;
+
+	display: table;
+}
+
+.text {
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .roundbutton:hover {

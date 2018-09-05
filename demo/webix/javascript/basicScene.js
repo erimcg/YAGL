@@ -93,7 +93,7 @@ buildGraph = function (choice) {
         var obj = createRandomYAGLGraphObject();
         builder.buildUsingJSONObj(obj);
     } else {
-        var url = prompt("Please enter the URL.", "http://demo.yagljs.com/yagl_files/dodecahedron.yagl");
+        var url = prompt("Please enter the URL.", "http://www.n0code.net/yagl/yagl_files/dodecahedron.yagl");
         console.log(url);
         builder.buildUsingJSONFile(url);
     }

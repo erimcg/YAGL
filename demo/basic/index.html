@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Demo</title>
+    <link rel="stylesheet" type="text/css" href="basicScene.css">
+</head>
+<body>
+
+<canvas id="renderCanvas"></canvas>
+
+<div id="buttonPanel">
+    <div class="roundbutton" onclick="buildGraph()"><span class="text">Build Graph</span></div>
+    <div class="roundbutton" onclick="toggleBuildSpeed()"><span class="text" id="toggleBuildSpeed">Fast Build</span></div>
+    <div class="roundbutton" onclick="toggleCamera()"><span class="text" id="toggleCamera">Rotate Camera</span></div>
+    <div class="roundbutton" onclick="findPath()"><span class="text">Shortest Path</span></div>
+    <div class="roundbutton" onclick="colorComponents()"><span class="text">Color Components</span></div>
+</div>
+
+<script src="babylon2-5.js"></script>
+<script src="yagl-0-1-3.js"></script>
+<script src="randomGraphGenerator.js"></script>
+<script src="basicScene.js"></script>
+</body>
+</html>

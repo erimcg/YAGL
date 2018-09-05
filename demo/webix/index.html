@@ -1,7 +1,38 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script>
-                window.location="app.html";
-        </script>
-    </head>
+<head>
+    <link rel="stylesheet" href="webix.css" type="text/css" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/basicScene.css">
+    <link rel="stylesheet" type="text/css" href="css/webix_scene.css">
+</head>
+<body>
+<div id="yagl_scene">
+    <div id = "notes"><span id = "fps"></span><span> | </span><span id = "note_span"></span></div>
+
+    <canvas id = "renderCanvas"></canvas>
+
+    <div id = "buttonPanel">
+        <button id="buildGraph" onclick="buildGraph()" class="roundbutton">Build Graph</button> <br>
+        <button id="toggleBuildSpeed" onclick="toggleBuildSpeed()" class="roundbutton">Fast Build</button> <br>
+        <button id="graphProperties" onclick="graphProperties()" class="roundbutton">Graph Properties</button> <br>
+        <button id="toggleCamera" onclick="toggleCamera()" class="roundbutton">Freeze Camera</button><br>
+
+        <button id="findPath" onclick="findPath()" class="roundbutton">Shortest Path</button> <br>
+        <button id="colorComponents" onclick="colorComponents()" class="roundbutton">Color Components</button> <br>
+    </div>
+
+    <div id = "toolBar">
+        <span style="position:relative;top:-16px;margin:8px;">Hold Shift or Ctrl for Multi-selection</span>
+    </div>
+
+</div>
+<div id = "html_camera_rotate"></div>
+
+<script src = javascript/webix.js></script>
+<script src = javascript/babylon2-5.js></script>
+<script src = javascript/yagl-0-1-3.js></script>
+<script src = javascript/randomGraphGenerator.js></script>
+<script src = javascript/basicScene.js></script>
+<script src = javascript/webix_scene.js></script>
+</body>
 </html>
