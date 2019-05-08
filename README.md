@@ -24,7 +24,7 @@ Graphs are predefined in JSON files.  See template below.
 
 ## Demonstrations
 
-- [Web App](http://www.n0code.net/yagl/demo/basic/)
+- [Web App](http://n0code.net/yagl/demo/basic/)
 
 ## Download
 
