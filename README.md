@@ -18,28 +18,18 @@ The builder will build a graph using the specifications defined in the YAGL file
 
 ## YAGL Files
 
-Graphs are predefined in JSON formatted files.  See template below.
+Graphs are predefined in JSON files.  See template below.
 
-- [YAGL 0.1.3](https://github.com/erimcg/YAGL/blob/master/doc/templates/0.1.3.yagl)
+- [YAGL 0.2.0](https://github.com/erimcg/YAGL/blob/master/doc/templates/0.2.0.yagl)
 
 ## Demonstrations
 
-- [Web App](http://www.n0code.net/yagl/webix/)
+- [Web App](http://www.n0code.net/yagl/demo/basic/)
 
-## Documentation
+## Download
 
-Please be patient with us.  We hope to have documentation out soon.
+Version 0.2.0 in iife format can be download [here](https://github.com/erimcg/YAGL/blob/master/dist/0-2-0/yagl.js).  This version has not been tested on the current version of Babylon.js.
 
 ## License
-All files in this repository are released under the following license unless
-specified at the beginning of the file.
-
-Copyright &copy; 2016, Bridgewater College
-<br />All rights reserved.
-
-Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
--	Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
--	Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
--	Neither the name of Bridgewater College nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+All files in this repository are released under the [MIT](https://opensource.org/licenses/MIT) license unless
+specified otherwise at the beginning of the file.

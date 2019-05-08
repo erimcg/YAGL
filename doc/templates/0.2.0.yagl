@@ -1,0 +1,27 @@
+{
+    "description": String,
+    "graphicsFramework": "BabylonJS",
+    "layout": "User Defined"|"Force Directed",
+    "directed": Boolean,
+    "vertexMesh": {
+        "meshName": String,
+        "rootUrl": String,
+        "sceneFilename": String
+    },
+    "vertices": [{
+        "id": Integer,
+        "data": Object,
+        "position": [Number, Number, Number],
+        "mesh": {
+            "meshName": String,
+            "rootUrl": String,
+            "sceneFilename": String
+        }
+    }],
+    "edges": [{
+        "id": Integer,
+        "v1": Integer,
+        "v2": Integer,
+				"weight": Integer
+    }]
+}

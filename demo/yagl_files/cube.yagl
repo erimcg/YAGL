@@ -1,5 +1,10 @@
 {
     "graphicsFramework":"Babylonjs",
+    "vertexMesh":{
+           "meshName":"Cube",
+           "rootUrl":"../assets/",
+           "sceneFilename":"cube.babylon"
+    },
     "vertices":[
         {"id":1, "position":[0,0,0]},
         {"id":2, "position":[0,0,5]},
