@@ -28,7 +28,7 @@ Graphs are predefined in JSON files.  See template below.
 
 ## Download
 
-Version 0.2.0 in iife format can be download [here](https://github.com/erimcg/YAGL/blob/master/dist/0-2-0/yagl.js).  This version has not been tested on the current version of Babylon.js.
+Version 0.2.0 of the library (a non-minified iife file) can be download [here](https://github.com/erimcg/YAGL/blob/master/dist/0-2-0/yagl.js).  This version has not been tested on the current version of Babylon.js.
 
 ## License
 All files in this repository are released under the [MIT](https://opensource.org/licenses/MIT) license unless
