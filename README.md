@@ -11,7 +11,7 @@ It's easy to use.
 
 ```
 var builder = new YAGL.GraphBuilder(scene);
-bulder.buildUsingJSONFile(url_of_yagl_file);
+builder.buildUsingJSONFile(url_of_yagl_file);
 ```
 
 The builder will build a graph using the specifications defined in the YAGL file and render it in the scene.
